@@ -1,0 +1,101 @@
+<view class='body'>
+  <view class='gut'></view>
+  <view class='small-font container-title'>订单信息</view>
+
+  <view class='content'>
+    <view class='top-padding between font'>
+      <text>{{order_no}}</text>
+      <text>{{sendtime}} 启运</text>
+    </view>
+    <view class='container around'>
+      <text class='black origin'>{{origin}}</text>
+      <view class='column-center brand'>
+        <view class='font'>{{brand==0?"大型SUV":brand==1?"标准SUV":"轿车"}} {{car_num}}辆</view>
+        <image class='icArrow' src="../../images/ic_arrow.png"></image>
+      </view>
+
+      <text class='black destination'>{{destination}}</text>
+    </view>
+    <view class='split'></view>
+
+    <view class='container between'>
+      <view wx:if='{{status==5?true:false}}'>
+        <text class='advance'>垫款发车</text>
+      </view>
+      <text wx:else> </text>
+      <text class='yellow'>{{status_desc}}</text>
+    </view>
+  </view>
+  <view class='gut'></view>
+
+  <view class='content'>
+    <view class='container'>
+      <text class='txt'>发运经理</text>
+      <text class='red' bindtap='callPhone' data-phone="{{carowner_phone}}">{{carowner_phone}}</text>
+    </view>
+    <view class='split'></view>
+    <view class='container'>
+      <text class='txt'>收车人</text>
+      <scroll-view scroll-y class='receiver'>{{receiver_name}}</scroll-view>
+      <text class='red' style="margin-left:30rpx;" bindtap='callPhone' data-phone="{{receiver_phone}}">{{receiver_phone}}</text>
+    </view>
+
+  </view>
+  <!-- 通过在途运输的界面跳转时展示 -->
+  <view hidden='{{unshow}}'>
+    <view class='gut'></view>
+    <view class='small-font container-title'>运费</view>
+    <view class='container'>
+      <view class='item'>运费: {{bill}}元</view>
+      <view class='item'>保险和取车费: {{deposit}}元</view>
+    </view>
+    <view class='split'></view>
+    <view class='container'>
+      <view class='item'>送店费: {{delivery_fee}}元</view>
+      <view class='item'>发票和税费: {{invoice}}元</view>
+    </view>
+    <view class='split'></view>
+    <view class='container'>
+      <view class='item'>总价: {{market_price}}元</view>
+      <view class='item'></view>
+    </view>
+  </view>
+
+
+  <view class='gut'></view>
+
+  <view wx:if='{{status==2||status==5?false:true}}'>
+    <view class='small-font container-title'>在途和保险</view>
+    <view class='content'>
+      <view class='container between' bindtap='showPic'>
+        <view>
+          <text class='txt'>车辆照片</text>
+          <text class='black'>点击查看</text>
+        </view>
+        <image class='right-arrow' src="../../images/right.png"></image>
+      </view>
+      <view class='split'></view>
+      <view class='container between' bindtap='showHistory'>
+        <view>
+          <text class='txt'>在途跟踪</text>
+          <text class='black'>抵达{{location}}</text>
+        </view>
+        <image class='right-arrow' src="../../images/right.png"></image>
+      </view>
+      <view class='split'></view>
+      <view class='container between' bindtap='showInsurance'>
+        <view>
+          <text class='txt'>保险查询</text>
+          <text class='black'>{{ifIns==0?"板车自带保险":"保险"}}</text>
+        </view>
+        <image class='right-arrow' src="../../images/right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class='gut'></view>
+  <view class='container' wx:if='{{share==1?true:false}}'>
+    <button bindtap='reurnBack' type='warn'>返 回</button>
+  </view>
+  <view class='{{init?"":"mask"}}'>
+  </view>
+</view>

@@ -1,0 +1,83 @@
+<view class='body'>
+<view class='gut'></view>
+  <!--头像  -->
+  <view class='container column-center'>
+    <view class='avatar'>
+        <open-data type='userAvatarUrl'></open-data>
+    </view>
+  </view>
+
+<view wx:if="{{login?false:true}}">
+  <form bindsubmit="formSubmit">
+    <!--姓名  -->
+    <view class='container' hidden='{{true}}'>
+      <input  placeholder-class='placeholder' name="nickname" placeholder='姓名' maxlength='15' type='text' value='{{nickName}}'></input>
+      <view class='split'></view>
+    </view>
+    <!--手机号  -->
+    <view class='container'>
+      <input placeholder-class='placeholder' bindinput='changeNewPhone' name="phone" placeholder='手机号' maxlength='11' type='number'></input>
+    </view>
+    <view class='split'></view>
+    <!-- 密码 -->
+    <view class='container between'>
+      <input placeholder-class='placeholder' name="password" password placeholder='密码' maxlength='6' type='number'></input>
+      <view class='{{disablePwd?"disPwd":"getPwd"}}' bindtap='getPwd'>
+        {{waitMsg}}  
+      </view>
+    </view>
+    <view class='split'></view>
+    <!--提示  -->
+    <view class='container hint'>
+      提示: 此手机号码和密码可以在APP和微信公众号中使用
+    </view>
+    <view class='gut'></view>
+    <view class='container'>
+      <button  type='warn' formType="submit">登 录</button>
+    </view>
+  </form>
+</view>
+
+<view wx:else>
+  <form bindsubmit="modifyUserInfo">
+    <!--姓名  -->
+    <view class='container between' hidden='{{true}}'>
+      <view>姓名: </view>
+      <view class='right-center'>
+        <input  placeholder-class='placeholder'  name='nickname' placeholder='在此输入您的姓名' value="{{userInfo.message}}" style='text-align:right'    bindinput='{{saveChangeName}}'></input>
+        <view  class='delete' style='margin-left:10rpx;' bindtap='deleteName'>
+          <image class='delete' src="../../images/delete.png"></image>
+        </view>
+      </view>
+      <view class='split'></view>
+    </view>
+    
+    <!--手机号  -->
+    <view class='container between'>
+      <view>手机号: </view>
+      <view class='right-center'>
+        <input  placeholder-class='placeholder'  type='number' maxlength='11' bindinput='changeNewPhone' placeholder='在此输入您的新手机号码' name="phone" style='text-align:right' value='{{newphone}}'></input>
+        <view class='delete' style='margin-left:10rpx;' bindtap='deletePhone'>
+          <image class='delete' src="../../images/delete.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class='split'></view>
+    <!--密码  -->
+    <view class='container between'>
+      <view>密码: </view>
+      <view class='right-center'>
+        <input  placeholder-class='placeholder'  placeholder-class='placeholder' name="password" password placeholder='在此输入密码' maxlength='6' type='number'  style='text-align:right'></input>
+        <view class='{{disablePwd?"getPwd":"disPwd"}}'  bindtap='getPwd'>
+        {{waitMsg}}  
+        </view>
+      </view>
+    </view>
+    <view class='gut'></view>
+    <view class='container'>
+      <button  type='warn' formType="submit">提 交</button>
+    </view>
+  </form>
+</view>
+
+</view>

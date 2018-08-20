@@ -1,0 +1,33 @@
+
+.gut{
+  height: 40rpx;
+}
+
+
+.content-body{
+  padding: 20rpx 30rpx 30rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.increment{
+  width: 100%;
+  color: #000;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.increment-title{
+  text-align: center;
+  padding:60rpx 0;
+  font-size: 60rpx;
+}
+.sub-title{
+  padding:40rpx 0;
+  font-size: 40rpx;
+}
+
+.increment-text{
+  padding-left: 40rpx;
+  line-height: 36rpx;
+}

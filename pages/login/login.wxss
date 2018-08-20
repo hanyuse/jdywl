@@ -1,0 +1,54 @@
+.avatar{
+  width:200rpx;
+  height:200rpx;
+}
+
+.delete{
+  width:32rpx;
+  height:32rpx;
+}
+.right-center{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user{
+  width:52rpx;
+  height:52rpx;
+
+}
+
+.hint{
+  text-align: center;
+  font-size:24rpx;
+}
+
+.getPwd{
+  position: relative;
+  padding:10rpx 0;
+  width:168rpx;
+  border: none;
+  border-radius: 10rpx;
+  background-color:#848484 ;
+  color:#fff;
+  margin-left:10rpx;
+  text-align: center;
+}
+
+.disPwd{
+  position: relative;
+  padding:10rpx 0;
+  width:168rpx;
+  border: none;
+  border-radius: 10rpx;
+  background-color:#666 ;
+  color:#fff;
+  margin-left:10rpx;
+  text-align: center;
+}
+
+.body{
+  width: 100%;
+  overflow-x: hidden;
+}

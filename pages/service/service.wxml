@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class='title'>筋斗云轿车物流</view>
+  <view class='sub-title'>轿车物流行业的领军者</view>
+  <view class='content'>
+    筋斗云物流是专业为轿车运输量身定制的服务平台，承接4s店调车、商务公司购车、私家车、二手车、展车、旅游出行车等轿车托运业务，可以实现在线下单、查询运价、在途跟踪、自动投保，让您省时、省力、省心又省钱。
+  </view>
+  <view class='contact' data-phone='{{phone}}' bindtap='callPhone'>
+    <image class='phone' src='../../images/contact.png'></image>
+    <view><text class='text'>在途咨询: </text>{{phone}}</view>  
+  </view>
+
+  <view class='contact' data-phone='{{service}}' bindtap='callPhone'>
+    <image class='phone' src='../../images/contact.png'></image>
+    <view><text class='text'>业务热线: </text>{{service}}</view>
+  </view>
+</view>

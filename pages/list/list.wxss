@@ -1,0 +1,26 @@
+.advance{
+  padding:5rpx 10rpx;
+  color: #ffffff;
+  background-color: #D358F7;
+  font-size:26rpx;
+}
+
+.receiver{
+  width:180rpx;
+  height:32rpx;
+  line-height: 32rpx;
+  overflow: auto;
+  display: inline-block;
+}
+
+.item{
+  width:50%;
+  box-sizing: border-box;
+  text-align: left;
+  display: inline-block;
+}
+
+.body{
+  width: 100%;
+  overflow-x: hidden;
+}

@@ -1,0 +1,38 @@
+<view class='gut'></view>
+<view class='container'>
+  <view class='between'>
+    <view class='userinfo'>
+      <view class='userinfo-avatar'>
+        <image class='userinfo-avatar' wx:if="{{login?false:true}}" src='../../images/ic_user_logo.png'></image>
+        <open-data wx:else type='userAvatarUrl' ></open-data>
+      </view>
+       <view class='column-around'>
+        <view wx:if='{{!login?true:false}}'>未登录</view>
+        <block wx:else>
+          <view>
+            <text>姓名:{{userInfo.message}}</text>
+          </view>
+          <view style='margin-top:10rpx;'>
+            <text class='small-font'>手机号:{{userInfo.phone}}</text>
+          </view>
+        </block>
+       </view> 
+    </view>
+    <image class='right-arrow' src="../../images/right.png"></image>
+  </view>
+</view>
+<view class='gut'></view>
+<view  class='container between' bindtap='service'>
+  <view class='mainInfo'>
+    <image class='hotline' src='../../images/ic_home_hotline.png'></image>
+    <text style='margin-left:20rpx;'>客服咨询</text>
+  </view>
+  <image class='right-arrow' src="../../images/right.png"></image>
+</view>
+<view class='gut'></view>
+<view wx:if='{{login?true:false}}' class='container'>
+  <button type='warn' bindtap='loginout'>退 出</button>
+</view>
+
+
+<button class='getUserInfo' bindgetuserinfo='getUserInfo' open-type='getUserInfo'></button>

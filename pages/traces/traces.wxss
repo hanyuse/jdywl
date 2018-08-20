@@ -1,0 +1,22 @@
+.img-container{
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+
+.img{
+  width:32rpx;
+  height:32rpx;
+}
+
+.gut{
+  height: 40rpx;
+}
+
+.item{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background-color: #ffffff;
+}

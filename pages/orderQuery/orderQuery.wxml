@@ -1,0 +1,58 @@
+<view class='body'>
+
+
+<!--订单查询-->
+<view class='gut'></view>
+<view class='container'>
+  <view style='position:relative'>
+    <input bindinput='changeNo' type='number' value="{{order_no}}" class='input' placeholder='请输入要查询的单号' maxlength='19'></input>
+    <view class='pic'>
+      <view class='img'>
+        <image class='img' src="../../images/search.png"></image>
+      </view>
+      <view class='img' bindtap='sanCode'>
+        <image class='img' src='../../images/scanning.png'></image>
+      </view>
+    </view>
+  </view>
+  <view>
+    <button bindtap='searchOrder' type='warn'>查 询</button>
+  </view>
+  <!-- <view style='margin-top:20rpx;'>
+    <button bindtap='resetVal'  type='warn'>重 置</button>
+  </view> -->
+  
+
+</view>
+<view class='gut'></view>
+<view wx:if='{{hasHistory}}'>
+  <view class='container'>
+    <view>
+      历史记录
+    </view>
+  </view>
+  <view class='split'></view>
+  <view class='container little-font'>
+    <block wx:for = "{{history}}" wx:key="{{index}}">
+      <view class='list-container' data-orderno='{{item.order_no}}' bindtap='searchHistoty'>
+        <view class='space'>
+          <view class='between'>
+            <view class='{{item.status==2?"yellow":item.status==5?"green":"red"}}'>{{item.status_desc}}</view>
+            <view class='arrow-container black'>
+              <text>{{item.origin}}</text>
+              <image class='arrow-right' src="../../images/ic_arrow.png"></image>
+              <text>{{item.destination}}</text>
+            </view>
+          </view>
+          <view class='little-font'>单号：{{item.order_no}}</view>      
+          <view class='between little-font'>
+            <view>查询日期：{{item.checkTime}}</view> 
+            <view>{{item.trace}}</view> 
+          </view>   
+        </view>  
+      </view>
+      <view class='split'></view>
+    </block>
+  </view>
+</view>
+</view>

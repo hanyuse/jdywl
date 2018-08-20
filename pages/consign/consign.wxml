@@ -1,0 +1,124 @@
+<view class='body'>
+<view class='tab' bindtap='changTab'>
+  <view data-tab='0' class='tab-items {{currentTab==0?"active":""}}'>
+    待托运
+  </view>
+  <view data-tab='1' class='tab-items  {{currentTab==1?"active":""}}'>
+    运输中
+  </view>
+  <view data-tab='2' class='tab-items {{currentTab==2?"active":""}}'>
+    已完成
+  </view>
+</view> 
+<view class='top'></view>
+
+<!--待托运页面-->
+<view class='content' hidden="{{currentTab==0 ? false : true}}">
+    <view class='no-data' wx:if="{{wait.total==0?true:false}}">{{wait.msg}}</view>
+    <view wx:else>
+      <block wx:for="{{wait.data}}" wx:key="{{index}}">
+        <view data-no="{{item.id}}" bindtap='loadWaitdata'>
+          <view class='container between'>
+            <view class='little-font'>单号:{{item.order_no}}</view>
+            <text wx:if='{{item.status==5?true:false}}' class='advance'>垫款发车</text>
+          </view>
+          <view class='pad between'>
+            <view>
+              <view>{{item.brand==0?'大型SUV':item.brand==1?'标准SUV':'轿车'}} {{item.car_num}}辆</view>
+              <view style="margin-top:15rpx;">市场运价: {{item.bill}}</view>
+            </view>
+            <view class='black big-font'>
+              {{item.origin}} 一 {{item.destination}}
+            </view>
+          </view>
+          <view class='container between'>
+            <view class='{{item.status==2?"yellow":item.status==5?"green":"red"}}'>{{item.status_desc}}</view>
+            <view class='little-font'>{{item.sendtime}}启运</view>
+          </view>
+          <view class='split'></view>
+        </view>
+      </block>
+    </view>
+</view>
+<!--运输中订单  -->
+
+<view class='content' hidden="{{currentTab==1 ? false : true}}">
+    <view class='no-data' wx:if="{{transportation.total==0?true:false}}">{{transportation.msg}}</view>
+    <view wx:else>
+      <block wx:for="{{transportation.data}}" wx:key="{{index}}">
+        <view data-no="{{item.id}}" bindtap='loadWaitdata'>
+          <view class='container between'>
+            <view class='little-font'>{{item.order_no}}</view>
+            <view class='red'>
+              {{item.status_desc}}
+            </view>
+          </view>
+          <view class='around'>
+            <view class='black big-font origin'>{{item.origin}}</view>
+            <view class='column-center brand'>
+              <text class='little-font'>{{item.brand==0?"大型SUV":item.brand==1?"标准SUV":"轿车"}} {{item.car_num}}辆</text>
+              <image class='icArrow' src="../../images/ic_arrow.png"></image>
+            </view>
+            <view class='black big-font destination'>{{item.destination}}</view>
+          </view>
+          <view class='around location'>抵达:{{item.location}}</view>
+
+          <view class='container between'>
+            <view>市场运价: {{item.market_price}}元</view>
+            <view class='yellow' style='margin-right:15rpx;'>成交运价: {{item.bill}}元</view>
+          </view>
+          <view class='split'></view>
+        </view>
+      </block>
+    </view>
+</view>
+
+<!--已完成订单  -->
+<view class='content' hidden="{{currentTab==2 ? false : true}}">
+    <view class='no-data' wx:if="{{complte.total==0?true:false}}">{{complte.msg}}</view>
+    <view wx:else>
+      <block wx:for="{{complte.data}}" wx:key="{{index}}">
+        <view data-no="{{item.id}}" bindtap='loadWaitdata'>
+          <view class='container between'>
+            <view class='little-font'>单号: {{item.order_no}}</view>
+          </view>
+          <view class='pad between'>
+            <view>
+              <text class='little-font'>{{item.brand==0?"大型SUV":item.brand==1?"标准SUV":"轿车"}} {{item.car_num}}辆</text>
+              <view style='margin-top:15rpx;'>市场运价: {{item.market_price}}</view>
+            </view>
+            <view class='black big-font'>
+              {{item.origin}} 一 {{item.destination}}
+            </view>
+          </view>
+          <view class='container between'>
+            <view class='green'>订单完成</view>
+            <view>{{item.sendtime}}启运</view>
+          </view>
+          <view class='split'></view>
+        </view>
+      </block>
+    </view>
+</view>
+
+<view class='mask' wx:if='{{(login&&auth=="")?true:false}}'>
+  <view class='center'>
+    <text>您还未登录，请点击</text>
+    <view>
+      <button class='getUserInfo' bindgetuserinfo='getUserInfo' open-type='getUserInfo'>这里</button>
+    </view>
+    <text>登录</text>
+  </view>
+</view>
+
+ <image class='add' src="../../images/add.png" bindtap='placeOrder'></image> 
+
+<!-- <view class='right-tab'>
+  <view data-tab='0' class='border-bottom'>托运中</view>
+  <view data-tab='1' class='border-bottom'>运输中</view>
+  <view data-tab='2' class='border-bottom'>已完成</view>
+  <view data-tab='order'><text  space='emsp'>下 单</text></view>
+</view> -->
+
+
+</view>

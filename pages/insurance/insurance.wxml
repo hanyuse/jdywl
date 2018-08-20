@@ -1,0 +1,2 @@
+<!--保险相关信息  -->
+<web-view src="{{src}}"></web-view>

@@ -1,0 +1,39 @@
+<block wx:if='{{types==0?true:false}}'>
+  <view class='gut'></view>
+  <view data-brand='2' class='container black big-font' bindtap='setBrandValue'>
+    标准轿车
+  </view>
+  <view class='content-body'>
+    包括大纵和通用系列、奔驰E级C级、宝马系列、本田系列、丰田系列、现代和起亚系列等轿车类型。长*宽*高≤5.0*1.85*1.6米，重量不超过1.8吨。
+  </view>
+  <view data-brand='1' class='container black big-font' bindtap='setBrandValue'>
+    标准SUV
+  </view>
+    <view class='content-body'>
+    包括奥迪Q5和Q3、本田CRV、本田缤智、丰田RV4、丰田汉兰达、大众途观、福特翼虎、Jeep指南者、长城H6、沃尔沃XC60等SUV车型。长*宽*高≤4.9*1.9*1.7米，重量不超过2吨。
+  </view>
+    <view data-brand='0' class='container black big-font' bindtap='setBrandValue'>
+    大型SUV
+  </view>
+    <view class='content-body'>
+    包括宝马X5和X6、奥迪Q7、普拉多、酷路泽、卡宴、奔驰GL系列、ML系统和R系列、别克GL8、奥德赛、塞纳、奔驰威霆、奔驰唯雅诺、捷豹等车型。长*宽*高≤5.6*2.2*2.0米，重量不超过2.5吨。
+  </view>
+</block>
+
+<block wx:if='{{types==1?true:false}}'>
+  <view class='increment'>
+    <view class='increment-title'>增值服务介绍</view>
+    <view class='sub-title'>什么是托运并监管?</view>
+    <view class='increment-text'>
+      托运并监管是指筋斗云物流受托运人（发车人）委托，对处于运输过程中和运输完毕到达目的地的受托车辆进行监督管理，使该车辆完全处于托运人的有效控制之中，同时，托运人自行收回车款或者委托筋斗云物流收回车款后再放行该车辆。
+    </view>
+    <view class='sub-title'>什么垫款发车?</view>
+    <view class='increment-text'>
+      垫款发车指托运人（发车人）将正常贸易流转状态的商品车辆向融资公司质押作为融资条件，借助筋斗云物流公司的物流信息管理系统获得融资，之后融资公司同意将车辆卖给买方。于此同时，物流公司必须承运该车辆并有义务保证此车辆始终处于融资公司的有效控制之中，知道融资公司收回借出款项，再把此车辆交给指定的买方的一种发运方式。
+    </view>
+    <view style='height:60rpx;background-color:#fff;'>
+    
+    </view>
+  </view>
+  
+</block>

@@ -1,0 +1,159 @@
+page{
+  background-color: #fff;
+  overflow-x: hidden;
+  height:100%;
+}
+.body{
+  background-color: #fff;
+  overflow-x: hidden;
+  width:100%;
+  min-height:100%;
+}
+/*导航菜单使用样式  */
+.tab{
+  width:100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content:space-around;
+  background-color: #ffffff;
+  color: #111;
+  position: fixed;
+  border-bottom: 1px solid #e6e6e6;
+  height: 90rpx;
+  line-height: 90rpx;
+  z-index: 9999;
+}
+.top{
+  height: 90rpx;
+}
+.tab-items{
+  box-sizing: border-box;
+  text-align: center; 
+  flex: 1 0 auto;
+  border-bottom: 3px solid transparent;
+}
+.active{
+  color: #E8413E;
+  border-bottom: 2px solid #E8413E;
+}
+.tab-body{
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*此页面单独使用的样式  */
+/*是否托运监管  */
+.check{
+  display: block;
+  font-size: 26rpx;
+  color: #ffffff;
+  padding: 2rpx 8rpx;
+  background-color: #DA81F5;
+}
+
+.advance{
+  padding:5rpx 10rpx;
+  color: #ffffff;
+  background-color: #D358F7;
+  font-size:26rpx;
+}
+
+.pad{
+  padding:0 30rpx;
+}
+
+.content{
+  width:100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.no-data{
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+}
+
+.location{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  padding-top: 15rpx;
+}
+
+.mask{
+  width:100%;
+  height: 100%;
+  z-index: 9998;
+  background-color: #fff;
+  position: absolute;
+  box-sizing: border-box;
+  top:0;
+  left: 0;
+  text-align: center;
+  padding-top:300rpx;
+}
+
+.getUserInfo{
+  display: inline-block;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:5px;
+  padding-right:5px;
+  box-sizing:border-box;
+  font-size:36rpx;
+  text-align:center;
+  text-decoration:none;
+  line-height:36rpx;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  background-color: transparent;
+  padding-top: 10rpx;
+  padding-bottom:10rpx;
+  color: #E8413E;
+}
+
+.getUserInfo::after{
+  border: none;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+}
+
+.add{
+  position: fixed;
+  right:60rpx;
+  bottom: 60rpx;
+  width:96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  box-shadow:2px 2px 2px #aaaaaa;
+  /* background-color: transparent; */
+}
+
+/* .right-tab{
+  position: fixed;
+  right:0rpx;
+  bottom: 100rpx;
+  background-color: transparent;
+  border: 1px solid #20B2AA;
+  border-radius: 20rpx;
+}
+
+.right-tab view{
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.border-bottom{
+  border-bottom: 1rpx solid #20B2AA;
+  background-color: #fff;
+  opacity: 0.5;
+} */

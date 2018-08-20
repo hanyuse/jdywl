@@ -1,0 +1,22 @@
+<view wx:if='{{traces==null?true:false}}' style='text-align:center;'>
+暂未查到跟踪信息
+</view>
+<view wx:else  class='item'>
+  <block wx:for='{{traces}}' wx:key="{{index}}">
+    <view>
+      <view style='height:10rpx;'></view>
+      <view class='img-container'>
+        <image class='img' src='../../images/time.png'></image>
+        <view class='{{index==0?"black":""}}' style='margin-left:20rpx;font-size:{{index==0?"34rpx":"30rpx"}};'>{{item.created_at}}</view>
+      </view>
+      <view class='{{index==0?"black":""}}' style='margin-left:50rpx;font-size:{{index==0?"34rpx":"30rpx"}};'>【{{item.desc}}】 {{item.street}} </view>
+    </view>
+    <view class='gut'></view>
+    <view class='split'></view>
+  </block>
+
+
+
+
+
+</view>

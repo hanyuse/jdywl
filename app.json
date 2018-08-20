@@ -1,0 +1,49 @@
+{
+  "pages": [  
+    "pages/orderQuery/orderQuery",
+    "pages/consign/consign",
+    "pages/placeOrder/placeOrder",
+    "pages/list/list",
+    "pages/userInfo/userInfo",
+    "pages/login/login",
+    "pages/img/img",
+    "pages/traces/traces",
+    "pages/insurance/insurance",
+    "pages/service/service",
+    "pages/place/place",
+    "pages/placeCar/placeCar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "筋斗云物流",
+    "navigationBarTextStyle": "white"
+    
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/orderQuery/orderQuery",
+        "text": "订单查询",
+        "color":"#707070",
+        "iconPath": "images/scan.png",
+        "selectedIconPath": "images/scan-alive.png"
+      },
+      {
+        "pagePath": "pages/consign/consign",
+        "text": "我的订单",
+        "color": "#707070",
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/car-alive.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "个人中心",
+        "color": "#707070",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-alive.png"
+      }
+    ]
+  }
+}

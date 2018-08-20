@@ -1,0 +1,125 @@
+<view class='position'>
+  <form bindsubmit='submitOrder'>
+
+    <input hidden name='origin' value='{{orgin}}'></input>
+    <input hidden name='destination' value='{{destination}}'></input>
+    <input hidden name='brand' value='{{brand}}'></input>
+    <input hidden name='oldCar' value='{{oldcar}}'></input>
+    <input hidden name='addtionalSrv' value='{{addtionalsrv}}'></input>
+    <input hidden name='if_invoice' value='{{if_invoice}}'></input>
+    <input hidden name='delivery_type' value='{{delivery_type}}'></input>
+
+    <view class='gut'></view>
+    <view class='content'>
+      <view class='container'>
+        <view class='around'>
+          <text class='item small-font'>始发地</text>
+          <text class='item'></text>
+          <text class='item small-font'>目的地</text>
+        </view>
+        <view class='gut'></view>
+        <view class='around'>
+          <text class='item black' bindtap='choice'>{{orgin==-1?'选择始发地':orgin}}</text>
+          <view class='item'>
+            <image class='icArrow' src="../../images/ic_arrow.png"></image>
+          </view>
+          <text class='item black' bindtap='choiceDes'>{{destination==-1?'选择目的地':destination}}</text>
+        </view>
+      </view>
+      <view class='split'></view>
+      <view class='container between' bindtap='choiceBrand'>
+        <view class='palce'>
+          <text class='text'>轿车类型</text>
+          <input disabled class='black' value='{{brand}}' placeholder='选择轿车类型' placeholder-class='placeholder'></input>
+        </view>
+        <image class='right-arrow' src="../../images/right.png"></image>
+      </view>
+      <view class='split'></view>
+      <view class='container between'>
+        <view class='palce'>
+          <text class='text '>轿车数量</text>
+          <input bindinput='carNumChange' class='black' name='car_num' type='number' maxlength='2' placeholder='输入轿车数量' placeholder-class='placeholder' style='width:200rpx;'></input>
+        </view>
+        <view class='carType'>
+          <text data-oldcar='0' bindtap='changeCarType' class='car {{oldcar==0?"choose":""}}'>新车</text>
+          <text data-oldcar='1' bindtap='changeCarType' class='car {{oldcar==1?"choose":""}}'>二手车</text>
+        </view>
+      </view>
+      <view class='split'></view>
+      <view class='container '>
+        <view class='palce'>
+          <text class='text'>轿车总价(元)</text>
+          <input bindinput='totalCarPriceChange' name='totalCarPrice' type='digit' class='flex black' placeholder-class='placeholder' placeholder='输入范围在1万到5000万元之间' maxlength='8'></input>
+        </view>
+        <view class='gut'></view>
+        <view class='green small-font'>
+          轿车总价用来购买保险或者融资，如果与实际车值不符，按照不足额保险处理及承担金融欺诈的后果。
+        </view>
+      </view>
+      <view class='split'></view>
+      <view class='container between'>
+        <view class='palce'>
+          <text class='text'>增值服务</text>
+          <view class='{{hasAddtion==1?"carType":"hasaddtioncarType"}}'>
+            <text data-addtionalsrv='0' bindtap='changeSupervise' class='supervise {{addtionalsrv==0?"choose":""}} {{hasAddtion==0?"chooseDisable":""}}'>无</text>
+            <text data-addtionalsrv='1' bindtap='changeSupervise' class='supervise {{addtionalsrv==1?"choose":""}}'>托运并监管</text>
+          </view>
+        </view>
+        <image bindtap='remind' class='remind' src="../../images/remind.png"></image>
+      </view>
+      <view class='split'></view>
+      <view class='container between'>
+        <text class='text'>启运日期</text>
+        <picker class='{{date==-1?"placeholder":"black"}}' style='height:36rpx;' name='sendtime' mode='date' bindchange="bindDateChange">
+          {{date==-1?'请选择启运日期':date}}
+        </picker>
+      </view>
+    </view>
+
+    <view class='gut'></view>
+    <view class='small-font container-title'>服务</view>
+
+    <view class='content'>
+      <view class='container between'>
+        <text>需要发票</text>
+        <switch bindchange='invoiceChange' class='switch' color='#20B2AA' />
+      </view>
+      <view class='split'></view>
+      <view class='container between'>
+        <text>送车上门</text>
+        <switch bindchange='deliveryChange' class='switch' color='#20B2AA' />
+      </view>
+    </view>
+
+    <view class='gut'></view>
+    <view class='small-font container-title'>其它</view>
+
+    <view class='content'>
+      <view class='container palce'>
+        <text class='text'>收车人姓名</text>
+        <input class='black' name='receiver_name' placeholder='输入收车人姓名' placeholder-class='placeholder'></input>
+      </view>
+      <view class='split'></view>
+      <view class='container palce'>
+        <text class='text'>收车人手机</text>
+        <input class='black' name='receiver_phone' placeholder='输入收车人手机' placeholder-class='placeholder' type='number' maxlength='11'></input>
+      </view>
+    </view>
+
+    <view class='bottom'>
+      <view class='between'>
+        <view class='bill'>
+          <view class='font'>总价：{{totalBill}}元</view>
+          <view class='little-font' wx:if='{{calPrice==0?false:true}}'>运费{{marketPrice}}元，保险费{{insurance}}元，其它费用{{deposit+deliveryFee+invoice+srvFee}}元</view>
+        </view>
+        <view class='submit-view'>
+          <button form-type='submit' class='submit' hover-class='hover'>提交</button>
+        </view>
+      </view>
+    </view>
+
+    <view style='height:130rpx;'></view>
+
+
+  </form>
+</view>

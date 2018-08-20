@@ -1,0 +1,178 @@
+/*公共样式  */
+
+page{
+  width:100%;
+  height: 100%;
+  background-color: #e8e8e8;
+  font-size:32rpx;
+  line-height: 32rpx;
+  color:#666666;
+  font-family: "微软雅黑";
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+/*两个组件之间的横向插槽  */
+.gut{
+  height:30rpx;
+  width: 100%;
+}
+/*容器  */
+.container{
+  width:100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #ffffff;
+}
+
+.top-padding{
+  width:100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 0;
+  background-color: #ffffff;
+}
+
+/*title  */
+.container-title{
+  padding:15rpx 30rpx;
+}
+
+
+
+/*两组件之间的分割线  */
+.split{
+  box-sizing: border-box;
+  width:100%;
+  margin-left: 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+/*两端对齐方式  */
+.between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*上下布局，左右居中  */
+.column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*横向平铺  */
+.around{
+  display: flex;
+  justify-content:space-around;
+  align-items:flex-end;
+}
+.right-arrow{
+  width:32rpx;
+  height:32rpx;
+}
+
+/*上下布局，平铺  */
+.column-around{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/*上下布局，左右居中  */
+.column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/****** 字体大小设置,4个等级，普通为32rpx ******/
+.biggest-font{
+  font-size:40rpx;
+}
+
+.big-font{
+  font-size:36rpx;
+}
+
+.font{
+  font-size:30rpx;
+}
+.small-font{
+  font-size:28rpx;
+}
+
+.little-font{
+  font-size: 26rpx;
+}
+
+/**** 字体颜色 ****/
+
+.black{
+  color:#000;
+}
+
+.yellow{
+  color:#FE9A2E;
+}
+
+.red{
+  color:#E8413E;
+}
+
+.green{
+  color:#04B4AE;
+}
+
+.placeholder{
+  color:#BDBDBD;
+  font-size: 30rpx;
+}
+
+/*运途指向线  */
+.icArrow{
+  width:92rpx;
+  height:24rpx;
+}
+
+
+.txt{
+  display: inline-block;
+  width:180rpx;
+}
+
+.mask{
+  background-color:  #e8e8e8;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 9999;
+}
+
+.content{
+  background: #fff;
+}
+
+.origin{
+  width:200rpx;
+  text-align: right;
+}
+
+.brand{
+  width:290rpx;
+}
+
+.destination{
+  width:200rpx;
+  text-align: left;
+}
+

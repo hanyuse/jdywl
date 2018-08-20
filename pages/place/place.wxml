@@ -1,0 +1,37 @@
+<view class='body'>
+<view class='bg'>
+  <view class='search'>
+    <image class='img' src='../../images/search.png'></image>
+    <input class='input' placeholder='请输入过滤条件：名称、拼音或者简称' placeholder-class='placeholder' bindinput='changeSearch'></input>  
+  </view>
+</view>
+
+<wxs module="m1">
+  var getResult =function (a,b,c,d,s){      
+    return a.indexOf(s) != 0 && b.indexOf(s) != 0 && c.indexOf(s) != 0 && d.indexOf(s)!= 0;
+  }
+  module.exports.getResult = getResult;
+</wxs>
+
+
+<block wx:for="{{origin}}" wx:key="{{index}}">
+  <view data-place="{{item.origin}}" hidden='{{m1.getResult(item.origin,item.letter,item.abb,item.pinyin,search)}}' bindtap='setValue'>
+    <view class='container between' >
+      <view>{{item.origin}}</view>
+      <image class='right-arrow' src="../../images/right.png"></image>
+    </view>
+    <view class='split'></view>
+  </view>
+</block>
+
+<block wx:for="{{des}}" wx:key="{{index}}">
+  <view data-place="{{item.destination}}" hidden='{{m1.getResult(item.destination,item.letter,item.abb,item.pinyin,search)}}' bindtap='setValue'>
+    <view class='container between' >
+      <view>{{item.destination}}</view>
+      <image class='right-arrow' src="../../images/right.png"></image>
+    </view>
+    <view class='split'></view>
+  </view>
+</block>
+
+</view>

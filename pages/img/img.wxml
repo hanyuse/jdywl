@@ -1,0 +1,17 @@
+
+<view wx:if='{{car==null?true:fase}}' class='item' style='text-align:center;'>   
+  <view class='gut'></view>
+  暂未上传图片
+</view>
+<view wx:else class='item'>
+  <block wx:for="{{car}}" wx:key="{{index}}">
+    <view class='gut'></view>
+    <view>车架号: {{item.vin}}</view>
+    <view class='gut'></view>
+    <view class='img-container'>
+      <block wx:for='{{item.images}}' wx:for-index="idx" wx:for-item="pic" wx:key="{{idx}}">
+        <image data-url='{{pic.url}}' bindtap='showOrigin' src='{{pic.thumbnail}}' class='img'></image>
+      </block>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,48 @@
+
+
+.container{
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top:60rpx;
+  padding: 60rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  font-size: 40rpx;
+  font-weight: bold ;
+  color: #20B2AA;
+}
+
+.sub-title{
+  font-size: 28rpx;
+  padding: 40rpx 0;
+}
+.content{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  padding-bottom: 30rpx;
+}
+
+.contact{
+  background-color: #20B2AA;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  margin: 8rpx;
+  padding: 20rpx;
+  border: 1rpx solid #20B2AA;
+  border-radius: 10rpx;
+}
+
+.phone{
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.text{
+  color:#F0F8FF;
+}
