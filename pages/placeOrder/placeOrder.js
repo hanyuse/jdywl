@@ -148,6 +148,7 @@ Page({
   // 提交表单
   submitOrder(e){
     const { origin, destination, brand, car_num, totalCarPrice, sendtime, receiver_name, receiver_phone} = e.detail.value;
+    const {formId} = e.detail
     if (origin==-1){
       wx.showModal({
         title: '提示',
@@ -242,7 +243,7 @@ Page({
     const auth = wx.getStorageSync("auth");
     wx.request({
       url: `${app.globalData.baseUrl}/orders/storeAndPay`,
-      data:{...e.detail.value},
+      data: { ...e.detail.value, formId},
       method:"POST",
       header:{
         'content-type':'application/x-www-form-urlencoded',
@@ -275,9 +276,14 @@ Page({
               })
             }
           })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: '系统故障，请稍后提交',
+            showCancel: false
+          })
         }
       }
     })
   }
-
 })

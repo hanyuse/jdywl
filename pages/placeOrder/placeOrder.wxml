@@ -1,5 +1,5 @@
 <view class='position'>
-  <form bindsubmit='submitOrder'>
+  <form bindsubmit='submitOrder' report-submit='{{true}}'>
 
     <input hidden name='origin' value='{{orgin}}'></input>
     <input hidden name='destination' value='{{destination}}'></input>
