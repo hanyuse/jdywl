@@ -159,7 +159,7 @@ Page({
       disablePwd: true
     })
     wx.request({
-      url: `${this.data.baseUrl}/logincode`,
+      url: `${app.globalData.baseUrl}/logincode`,
       data:{
         phone: this.data.newphone
       },
